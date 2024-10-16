@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styleB.css">
+    <title>MAKE B</title>
+    <style>
+        /* Estilos para a tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        /* Estilo para a linha selecionada */
+        .highlight {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main class="superContainer">
+        <h2>Código do produto</h2>
+        <form class="form-container" onsubmit="return false;">
+            <input type="number" id="productCode" placeholder="Digite o código do produto">
+            <button class="btnEnviar" type="submit" onclick="searchProduct()">Pesquisar</button>
+        </form>
+
+        <h3>Pesquisar por marca</h3>
+        <div class="container">
+            <div class="botoes1">
+                <button class="bnt-makeB" onclick="filterMakeB()">Carregar Maquiagens</button>
+            </div>
+        </div>
+
+        <!-- Tabela para exibir os produtos -->
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descrição</th>
+                    <th>Rack</th>
+                    <th>Posição</th>
+                    <th>Coluna</th>
+                    <th>Altura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas serão adicionadas aqui -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // Dados da planilha com as maquiagens da MAKE B
+        const productData = [
+            ["12345", "Batom Cremoso", "A1", "1", "C", "10"],
+            ["67890", "Máscara de Cílios", "A2", "2", "D", "12"],
+            // Adicione mais dados conforme necessário
+        ];
+
+        // Carrega os dados da MAKE B na tabela
+        async function filterMakeB() {
+    const response = await fetch('/produtos');
+    const products = await response.json();
+
+    const tableBody = document.querySelector('#productTable tbody');
+    tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
+
+    products.forEach(produto => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${produto.Código}</td>
+            <td>${produto.Descrição}</td>
+            <td>${produto.Rua}</td>
+            <td>${produto.Posição}</td>
+            <td>${produto.Coluna}</td>
+            <td>${produto.Altura}</td>
+        `;
+        tableBody.appendChild(newRow);
+    });
+        }
+        function searchProduct() {
+            const code = document.getElementById('productCode').value;
+            const rows = document.querySelectorAll('#productTable tbody tr');
+
+            // Limpa as seleções anteriores
+            rows.forEach(row => {
+                row.classList.remove('highlight');
+            });
+
+            // Pesquisa pela linha correspondente ao código
+            rows.forEach(row => {
+                const productCodeCell = row.cells[0].textContent;
+                if (productCodeCell === code) {
+                    row.classList.add('highlight'); // Adiciona classe para destacar a linha
+                }
+            });
+        }
+
+        // Carregar os dados assim que a página é carregada
+        window.onload = filterMakeB;
+    </script>
+</body>
+</html>
