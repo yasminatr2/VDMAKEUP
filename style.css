@@ -12,7 +12,6 @@ body{
     align-items: center;
     background-color: aliceblue;
     padding: 3rem;
-
     border-radius: 15px;
 
 }
@@ -58,6 +57,7 @@ a{
 .bnt-makeB,.bnt-glam,.bnt-intense,.bnt-niina,.bnt-soul,.bnt-qdb{
     width: 90%;
     cursor: pointer;
+    text-decoration: none;
 }
 input{
     padding: 10px;
@@ -100,7 +100,8 @@ h3{
     margin-left: 10rem;
     margin-right: 10rem;
     padding: 10px;
-    margin-top: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
     border-radius: 15px;
 }
 .btnEnviar{
@@ -112,7 +113,62 @@ h3{
     padding: 10px;
     width: 20%;
     display: flex;
+    border-radius: 10px;
+    border: solid 1px;
+
 }
 .btnEnviar:hover{
     background-color: rgb(66, 128, 79);
+}
+.resultado-container{
+    background-color: #FFB6D3;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    border-radius: 15px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+p.e,p.r,p.c,p.p,p.d{
+    background-color: #f7f7f7;
+    margin-top: 3px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.notFind{
+    background-color: #FFB6D3;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    border-radius: 15px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+#loader{
+    color: #e99dd6;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cabecalho{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 3rem;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.imagem.produto{
+    margin: auto;
 }
