@@ -17,7 +17,7 @@
         </form>
 
         <!-- Loader -->
-        <div id="loader" style="display:none;">Carregando...</div>
+        <div id="loader" style="display:none;"><i class="bi bi-heart-half">Carregando...</i></div>
 
         <!-- Div onde o resultado será mostrado -->
         <div id="resultado"></div>
@@ -50,7 +50,6 @@
         return;
     }
 
-    // Mostrar loader
     document.getElementById('loader').style.display = 'block';
 
     fetch('http://localhost:3000/buscar-produto', {
@@ -67,9 +66,7 @@
         return response.json();
     })
     .then(data => {
-    console.log('Dados do produto:', data); // Inspecione os dados retornados da API
-
-    // Ocultar loader
+    
     document.getElementById('loader').style.display = 'none';
     const resultadoDiv = document.getElementById('resultado');
     resultadoDiv.innerHTML = ''; // Limpar resultado anterior
@@ -77,7 +74,7 @@
     if (data && data.estacao && data.rack && data.coluna) {
         resultadoDiv.innerHTML = `
         <div class="resultado-container">
-            <p><strong>Posição do Produto:</strong></p>
+            <p class="pp"><strong>  Posição do Produto:</strong></p>
             <p class="e">${data.estacao}</p>
             <p class="r">${data.rack}</p>
             <p class="c">Coluna: ${data.coluna}</p>
@@ -94,7 +91,9 @@
         // Ocultar loader em caso de erro
         document.getElementById('loader').style.display = 'none';
         console.error('Erro:', error);
+        
     });
+
 });
 
 
