@@ -59,13 +59,14 @@
     if (data && data.estacao && data.rack && data.coluna) {
         resultadoDiv.innerHTML = `
         <div class="resultado-container">
-            <p class="pp"><strong>  Posição do Produto:</strong></p>
+            <div class="descricao-produto">
             <p class="e">${data.estacao}</p>
             <p class="r">${data.rack}</p>
             <p class="c">Coluna: ${data.coluna}</p>
             <p class="p">Posição: ${data.posicao}</p>
             <p class="d">Descrição: ${data.descricao}</p>
-            <img src="acervo/${encodeURIComponent(data.imagem)}" alt="${data.descricao}" class="imagem-produto">
+            </div>
+            <img src="acervo/${encodeURIComponent(data.imagem)}" alt="(imagem do produto) ${data.descricao}" class="imagem-produto">
         </div>`;
     } else {
         resultadoDiv.innerHTML = '<p class="notFind">Produto não encontrado.</p>';
