@@ -83,7 +83,8 @@ input, .btnEnviar {
 .descricao-produto {
     margin-right: 20px; /* Espaço entre o texto e a imagem */
     margin-bottom: auto;
-    width: 10px;
+    
+ 
 }
 
 .notFind {
@@ -96,8 +97,8 @@ p.e, p.r, p.c, p.p, p.d {
     border-radius: 5px;
     padding: 5px;
     margin: 2px;
-    margin-top: 5px;/*voltar*/
-    
+
+
 }
 
 #loader{
@@ -130,7 +131,7 @@ img {
     width: 10rem;
     height: auto;
     margin-top: auto;
-    margin-left: 5px;  
+    margin:auto;
 }
 
 /* Responsividade */
