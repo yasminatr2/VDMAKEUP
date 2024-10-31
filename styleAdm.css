@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-containers {
+    border-radius: 25px;
+    padding: 25px;
+    background-color: rgb(241, 247, 252);
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin: 5rem auto; /* Centering with auto margin */
+    max-width: 90%; /* Limit width to 90% of the viewport */
+    box-shadow: 4px 4px 10px rgb(97, 97, 97);
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(161, 161, 161);
+    margin-top: 5px;
+    width: 100%; /* Full width */
+}
+
+a {
+    background-image: linear-gradient(90deg, #f8afe8, #c05b93);
+    padding: 15px;
+    margin: 20px auto; /* Centering with auto margin */
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 15px;
+    text-decoration: none;
+    max-width: 300px; /* Limit width */
+}
+
+#voltar {
+    margin-top: 5rem;
+}
+
+a:hover {
+    background-image: linear-gradient(90deg, #c05b93, #f8afe8);
+    color: aliceblue;
+}
+
+label {
+    padding: 10px;
+}
+
+button {
+    border: none;
+    background-image: linear-gradient(90deg, #f8afe8, #c05b93);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-image: linear-gradient(90deg, #c05b93, #f8afe8);
+}
+
+#salvar {
+    margin-top: 5px;
+}
+
+#voltar {
+    background-image: linear-gradient(90deg, #c05b93, #f8afe8);
+    margin-left: 3rem;
+    text-decoration: none;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 30%; 
+    margin-left: 30%;
+    margin-top: 8rem;
+    margin-right: 10%;
+    background-color: aliceblue;
+    box-shadow: 2px 2px 6px 3px rgb(112, 112, 112);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.form-container-1 input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 95%; /* Full width */
+}
+
+.form-container-1 button {
+    padding: 10px 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .form-containers, .cont {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    a, button {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px 0; /* Stack buttons vertically */
+    }
+}

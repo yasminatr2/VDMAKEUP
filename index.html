@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>VDMAKEUP</title>
 </head>
 <body>
     <header class="cabecalho"> MAKE UP VD OBOTICÁRIO</header>
     <main class="superContainer">
+        <a class="admV i bi bi-person" href="adm.html">Área do administrador</a>
         <h2>Código do produto</h2>
         <form id="produto-form" class="form-container">
             <input type="number" id="codigo-produto" required>
-            <button class="btnEnviar" type="submit">Pesquisar</button>
+            <button class="btnEnviar" type="submit">Pesquisar<i class="bi bi-search-heart"></i></button>
         </form>
 
         <!-- Loader -->
@@ -56,11 +58,11 @@
     const resultadoDiv = document.getElementById('resultado');
     resultadoDiv.innerHTML = ''; // Limpar resultado anterior
 
-    if (data && data.estacao && data.rack && data.coluna) {
+    if (data && data.rua && data.rack && data.coluna) {
         resultadoDiv.innerHTML = `
         <div class="resultado-container">
             <div class="descricao-produto">
-            <p class="e">${data.estacao}</p>
+            <p class="e">${data.rua}</p>
             <p class="r">${data.rack}</p>
             <p class="c">Coluna: ${data.coluna}</p>
             <p class="p">Posição: ${data.posicao}</p>
@@ -77,9 +79,7 @@
         // Ocultar loader em caso de erro
         document.getElementById('loader').style.display = 'none';
         console.error('Erro:', error);
-        
     });
-
 });
 
 
