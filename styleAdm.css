@@ -67,11 +67,6 @@ button:hover {
     margin-top: 5px;
 }
 
-#voltar {
-    background-image: linear-gradient(90deg, #c05b93, #f8afe8);
-    margin-left: 3rem;
-    text-decoration: none;
-}
 
 .cont {
     display: flex;
@@ -96,6 +91,14 @@ button:hover {
 
 .form-container-1 button {
     padding: 10px 20px;
+}
+
+a{
+    background-image: linear-gradient(90deg, #c05b93, #f8afe8);
+    margin-left: 5rem;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 /* Media Queries for Responsiveness */
